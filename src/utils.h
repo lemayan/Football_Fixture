@@ -15,16 +15,16 @@ struct Team {
 
 class Utils {
 public:
-    // Function to read teams from the CSV file
+    // Here we have now created a Function that will be able to read teams from the CSV file
     static std::vector<Team> readTeamsFromCSV(const std::string& filename) {
         std::vector<Team> teams;
         std::ifstream file(filename);
         std::string line, name, town, stadium;
 
-        // Skip header line
+        // The purpose of this code will be to help Skip header line
         std::getline(file, line);
 
-        // Read the data from the CSV file
+        //For this it will Read the data from the CSV file
         while (std::getline(file, line)) {
             std::stringstream ss(line);
             std::getline(ss, name, ',');
@@ -37,16 +37,16 @@ public:
         return teams;
     }
 
-    // Function to save the generated fixtures into a CSV file
+    // This Function will now be able to save the generated fixtures into a CSV file
     static void saveFixturesToCSV(const std::string& filename, const std::vector<std::string>& fixtures) {
         std::ofstream file(filename);
-        for (const auto& fixture : fixtures) {
+        for (const auto& fixture: fixtures) {
             file << fixture << std::endl;
         }
         file.close();
     }
 
-    // Function to print the generated fixtures to the console
+    // Here we create a Function to print the generated fixtures to the console
     static void printFixtures(const std::vector<std::string>& fixtures) {
         for (const auto& fixture : fixtures) {
             std::cout << fixture << std::endl;
