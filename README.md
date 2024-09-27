@@ -29,7 +29,10 @@ Sea Horses FC, Mombasa, SHorses Arena
 ## **How to Run**
 1. Clone the repository:
     ```bash
-    git clone https://github.com/your-username/fixture-generator.git
+
+    git clone https://github.com/lemayan/Football_Fixture.git
+    git clone 
+    
     cd fixture-generator
     ```
 
@@ -73,4 +76,4 @@ Feel free to fork the project, make improvements, and submit pull requests. Cont
 
 ---
 
-Feel free to modify the content according to your project's specifics or any extra features you want to highlight.
+For my students please feel free to modify the content according to your project's specifics or any extra features you want to highlight.
