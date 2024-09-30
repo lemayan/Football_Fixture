@@ -31,7 +31,7 @@ Sea Horses FC, Mombasa, SHorses Arena
     ```bash
 
     git clone https://github.com/lemayan/Football_Fixture.git
-    git clone 
+
     
     cd fixture-generator
     ```
