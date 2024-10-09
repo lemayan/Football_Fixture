@@ -6,30 +6,31 @@
 #include <string>
 #include <fstream>
 #include <sstream>
+using namespace std;
 
 struct Team {
-    std::string name;
-    std::string town;
-    std::string stadium;
+    string name;
+    string town;
+    string stadium;
 };
 
 class Utils {
 public:
     // Here we have now created a Function that will be able to read teams from the CSV file
-    static std::vector<Team> readTeamsFromCSV(const std::string& filename) {
-        std::vector<Team> teams;
-        std::ifstream file(filename);
-        std::string line, name, town, stadium;
+    static vector<Team> readTeamsFromCSV(const std::string& filename) {
+        vector<Team> teams;
+        ifstream file(filename);
+        string line, name, town, stadium;
 
         // The purpose of this code will be to help Skip header line
-        std::getline(file, line);
+        getline(file, line);
 
         //For this it will Read the data from the CSV file
-        while (std::getline(file, line)) {
-            std::stringstream ss(line);
-            std::getline(ss, name, ',');
-            std::getline(ss, town, ',');
-            std::getline(ss, stadium, ',');
+        while (getline(file, line)) {
+            stringstream ss(line);
+            getline(ss, name, ',');
+            getline(ss, town, ',');
+            getline(ss, stadium, ',');
             teams.push_back({name, town, stadium});
         }
 
@@ -38,8 +39,8 @@ public:
     }
 
     // This Function will now be able to save the generated fixtures into a CSV file
-    static void saveFixturesToCSV(const std::string& filename, const std::vector<std::string>& fixtures) {
-        std::ofstream file(filename);
+    static void saveFixturesToCSV(const string& filename, const vector<string>& fixtures) {
+        ofstream file(filename);
         for (const auto& fixture: fixtures) {
             file << fixture << std::endl;
         }
@@ -47,9 +48,9 @@ public:
     }
 
     // Here we create a Function to print the generated fixtures to the console
-    static void printFixtures(const std::vector<std::string>& fixtures) {
+    static void printFixtures(const vector<string>& fixtures) {
         for (const auto& fixture : fixtures) {
-            std::cout << fixture << std::endl;
+            cout << fixture << endl;
         }
     }
 };
